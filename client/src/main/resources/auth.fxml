@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.netfilestorage.client.AuthController">
+   <children>
+      <ImageView disable="true" fitHeight="150.0" fitWidth="200.0" focusTraversable="true" layoutX="180.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <VBox fx:id="authorization" alignment="CENTER" layoutX="125.0" layoutY="150.0" prefHeight="200.0" prefWidth="310.0" spacing="8">
+         <children>
+            <TextField fx:id="loginField" layoutX="20" layoutY="20" prefWidth="364.0" promptText="Login" HBox.hgrow="ALWAYS" />
+            <PasswordField fx:id="passwordField" prefWidth="400.0" promptText="Password" />
+            <ButtonBar translateX="-50.0">
+               <buttons>
+                  <Button fx:id="loginButton" alignment="CENTER" onAction="#sendAuthMessage" prefWidth="100.0" text="Sign in" textAlignment="CENTER" />
+                  <Button fx:id="registerButton" alignment="CENTER" minWidth="57.0" onAction="#showRegForm" prefHeight="25.0" text="Registration" textAlignment="CENTER" />
+               </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+      <VBox fx:id="registration" alignment="CENTER" layoutX="125.0" layoutY="150.0" prefHeight="200.0" prefWidth="310.0" spacing="8" visible="false">
+         <children>
+            <TextField fx:id="regLoginField" layoutX="20" layoutY="20" prefWidth="364.0" promptText="Enter login" HBox.hgrow="ALWAYS" />
+            <PasswordField fx:id="regPasswordField" prefWidth="400.0" promptText="Enter password" />
+            <PasswordField fx:id="regPasswordField1" prefWidth="400.0" promptText="Enter password again" />
+            <ButtonBar translateX="-50.0">
+               <buttons>
+                  <Button fx:id="regButton" alignment="CENTER" onAction="#sendRegMessage" prefWidth="100.0" text="Register" textAlignment="CENTER" />
+                  <Button fx:id="exitButton" alignment="CENTER" onAction="#exitReg" text="Exit" textAlignment="CENTER" />
+               </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
