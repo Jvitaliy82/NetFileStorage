@@ -32,7 +32,7 @@ public class MainHandler extends ChannelInboundHandlerAdapter {
                     public FileVisitResult visitFile (Path file, BasicFileAttributes attrs) {
                         TreeMap<String, Long> findFiles = new TreeMap<>();
                         String fileName = file.getFileName().toString();
-                        Long fileSize = (long) Math.ceil(file.toFile().length() / 1024.0);
+                        Long fileSize = file.toFile().length() / 1024;
                         findFiles.put(fileName, fileSize);
                         RefreshServerStorageMessage refreshSrvFileListMessage = new RefreshServerStorageMessage(findFiles);
                         ctx.writeAndFlush(refreshSrvFileListMessage);
